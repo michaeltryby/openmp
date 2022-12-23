@@ -6,6 +6,13 @@ add_executable(
     test.cpp
 )
 
+target_compile_options(
+    test
+    PUBLIC
+        -Xpreprocessor
+        -fopenmp
+)
+
 target_link_libraries(
     test
     PUBLIC
