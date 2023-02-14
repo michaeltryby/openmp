@@ -6,9 +6,6 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/install CACHE PATH "..." FORCE)
 endif()
 
-# Define install locations (will be prepended by install prefix)
- include(GNUInstallDirs)
-
 
 include(FetchContent)
 
@@ -42,6 +39,10 @@ target_include_directories(
     $<INSTALL_INTERFACE:/usr/local/include>
 )
 
+
+# Define install locations (will be prepended by install prefix)
+ include(GNUInstallDirs)
+
 install(
     TARGETS
         omp
@@ -61,14 +62,6 @@ install(
     FILE
         openmp-config.cmake
 )
-
-#install(
-#    FILES
-#        ${CMAKE_BINARY_DIR}/_deps/openmp-build/runtime/src/omp.h
-#        ${CMAKE_BINARY_DIR}/_deps/openmp-build/runtime/src/omp-tools.h
-#    DESTINATION
-#        "include"
-#)
 
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_PACKAGE_VENDOR "")
