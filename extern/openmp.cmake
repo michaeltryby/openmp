@@ -7,10 +7,7 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 endif()
 
 # Define install locations (will be prepended by install prefix)
-set(TOOL_DIST "bin")
-set(INCLUDE_DIST "include")
-set(LIBRARY_DIST "lib")
-set(CONFIG_DIST  "cmake")
+ include(GNUInstallDirs)
 
 
 include(FetchContent)
@@ -51,24 +48,27 @@ install(
     EXPORT
         openmpTargets
     RUNTIME DESTINATION
-        "${TOOL_DIST}"
+        ${BINDIR}
     LIBRARY DESTINATION
-        "${LIBRARY_DIST}"
-    ARCHIVE DESTINATION
-        "${LIBRARY_DIST}"
-    FRAMEWORK DESTINATION
-        "${TOOL_DIST}"
+        ${LIBDIR}
 )
 
 install(
     EXPORT
         openmpTargets
     DESTINATION
-        "${CONFIG_DIST}"
+        "cmake"
     FILE
         openmp-config.cmake
 )
 
+#install(
+#    FILES
+#        ${CMAKE_BINARY_DIR}/_deps/openmp-build/runtime/src/omp.h
+#        ${CMAKE_BINARY_DIR}/_deps/openmp-build/runtime/src/omp-tools.h
+#    DESTINATION
+#        "include"
+#)
 
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_PACKAGE_VENDOR "")
