@@ -3,5 +3,6 @@
 
 .DS_store
 
-build/
+
 openmp-14.0.0-Darwin/
+openmp-15.0.0-Darwin/

@@ -1,20 +1,39 @@
 
 
 
+cmake_minimum_required(
+    VERSION
+        3.27
+)
+
+project(
+  test
+    LANGUAGES
+        CXX
+)
+
+set(
+    CMAKE_PREFIX_PATH
+        ./openmp-15.0.0-Darwin/
+)
+
+
+set(CMAKE_FIND_DEBUG_MODE FALSE)
+find_package(
+    OpenMP
+        COMPONENTS
+            CXX REQUIRED
+)
+set(CMAKE_FIND_DEBUG_MODE FALSE)
+
+
 add_executable(
-    test
+  test
     test.cpp
 )
 
-target_compile_options(
-    test
-    PUBLIC
-        -Xpreprocessor
-        -fopenmp
-)
-
 target_link_libraries(
-    test
+  test
     PUBLIC
-        omp
+        OpenMP::OpenMP_CXX
 )
