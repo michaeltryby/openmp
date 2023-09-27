@@ -11,7 +11,7 @@ endif()
 project(
   openmp
     VERSION
-        15.0.0
+        16.0.0
 )
 
 

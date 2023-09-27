@@ -18,9 +18,9 @@ cmake_policy(SET CMP0135 NEW)
 FetchContent_Declare(
     OpenMP
     URL
-        https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.0/openmp-15.0.0.src.tar.xz
+        https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/openmp-16.0.0.src.tar.xz
     URL_HASH
-        SHA256=7ee0d1c6a0426a34f102aa5c3a2c307807a4885ce347cb51fbc7e5effd6891c6
+        SHA256=e30f69c6533157ec4399193ac6b158807610815accfbed98695d72074e4bedd0
     OVERRIDE_FIND_PACKAGE
 )
 

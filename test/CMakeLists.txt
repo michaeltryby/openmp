@@ -14,7 +14,7 @@ project(
 
 set(
     CMAKE_PREFIX_PATH
-        ./openmp-15.0.0-Darwin/
+        ./openmp-16.0.0-Darwin/
 )
 
 
