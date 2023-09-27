@@ -1,6 +1,7 @@
-# OpenMP 
-
+# OpenMP
 cmake build targeting MacOS arch universal2 
+
+Useful for building universal libraries with an OpenMP dependency
 
 ## Build
 
