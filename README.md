@@ -13,11 +13,23 @@ Useful for building universal libraries with an OpenMP dependency
 
 ## Usage
 
-Download and expand package. Add package location to `CMAKE_PREFIX_PATH` in CMakeLists.txt as follows
+Download and expand package. Add the following calls to CMakeLists.txt
 
 ```
 set(
     CMAKE_PREFIX_PATH
         ./openmp-16.0.0-Darwin/
+)
+
+find_package(
+    OpenMP
+        COMPONENTS
+            CXX REQUIRED
+)
+
+target_link_libraries(
+  <target name>
+    PUBLIC
+        OpenMP::OpenMP_CXX
 )
 ```
