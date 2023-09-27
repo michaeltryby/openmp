@@ -13,7 +13,7 @@ Useful for building universal libraries with an OpenMP dependency
 
 ## Usage
 
-Download and expand package. Add the following calls to CMakeLists.txt
+Download and expand package. Add the following calls to your CMakeLists.txt
 
 ```
 set(
