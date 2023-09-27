@@ -1,1 +1,3 @@
-# OpenMP MacOS universal2 cmake build 
+# OpenMP 
+
+cmake build targeting MacOS arch universal2 
