@@ -6,6 +6,29 @@ cmake_minimum_required(
         3.27
 )
 
+
+include(
+    FetchContent
+)
+
+FetchContent_Declare(
+  libomp-darwin
+    URL
+        https://github.com/michaeltryby/openmp/releases/download/v16.0.0/openmp-16.0.0-Darwin.tar.gz
+    URL_HASH
+        SHA256=4556d19fab4460e356aff566976d289b4b00b3fca88101113782b0d467f1428d
+)
+
+FetchContent_MakeAvailable(
+    libomp-darwin
+)
+
+set(
+    CMAKE_PREFIX_PATH
+        ${CMAKE_BINARY_DIR}/_deps/libomp-darwin-src/
+)
+
+
 project(
   test
     LANGUAGES
@@ -13,8 +36,14 @@ project(
 )
 
 set(
-    CMAKE_PREFIX_PATH
-        ./openmp-16.0.0-Darwin/
+    CMAKE_OSX_DEPLOYMENT_TARGET
+        11.0
+)
+
+set(
+    CMAKE_OSX_ARCHITECTURES
+        x86_64
+        arm64
 )
 
 
