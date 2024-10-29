@@ -46,13 +46,13 @@ set(
 )
 
 
-set(CMAKE_FIND_DEBUG_MODE FALSE)
-find_package(
-    OpenMP
-        COMPONENTS
-            CXX REQUIRED
-)
-set(CMAKE_FIND_DEBUG_MODE FALSE)
+#set(CMAKE_FIND_DEBUG_MODE FALSE)
+#find_package(
+#    OpenMP
+#        COMPONENTS
+#            CXX REQUIRED
+#)
+#set(CMAKE_FIND_DEBUG_MODE FALSE)
 
 
 add_executable(

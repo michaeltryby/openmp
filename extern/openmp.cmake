@@ -9,6 +9,7 @@
 #
 
 
+
 # Sets default install prefix when cmakecache is initialized for first time
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(
@@ -87,10 +88,10 @@ install(
         OpenMP_Targets
     RUNTIME
         DESTINATION
-            ${BINDIR}
+            ${CMAKE_INSTALL_BINDIR}
     LIBRARY
         DESTINATION
-            ${LIBDIR}
+            ${CMAKE_INSTALL_LIBDIR}
 )
 
 # Export from build tree

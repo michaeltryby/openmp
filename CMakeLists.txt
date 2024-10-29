@@ -1,7 +1,7 @@
 
 
 
-cmake_minimum_required (VERSION 3.13)
+cmake_minimum_required (VERSION 3.24)
 
 if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
     message(FATAL_ERROR "In-source builds are disabled.")
@@ -25,9 +25,16 @@ set(
         x86_64
 )
 
+if (APPLE)
+    include(
+        extern/openmp.cmake
+    )
+endif()
 
-include(
-    extern/openmp.cmake
+find_package(
+    OpenMP
+        COMPONENTS
+            CXX REQUIRED
 )
 
 enable_testing()
