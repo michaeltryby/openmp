@@ -1,4 +1,12 @@
-
+#
+# openmp.cmake - CMake configuration for OpenMP dependency on MacOS
+#
+# Created:  Oct 29, 2024
+# Modified:
+#
+# Author: Michael E. Tryby
+#         US EPA ORD/CESER
+#
 
 
 # Sets default install prefix when cmakecache is initialized for first time
@@ -37,11 +45,13 @@ FetchContent_Declare(
     OVERRIDE_FIND_PACKAGE
 )
 
-set(OPENMP_STANDALONE_BUILD
-    TRUE
+set(
+    OPENMP_STANDALONE_BUILD
+        TRUE
 )
-set(LIBOMP_INSTALL_ALIASES
-    OFF
+set(
+    LIBOMP_INSTALL_ALIASES
+        OFF
 )
 
 FetchContent_MakeAvailable(
@@ -75,10 +85,12 @@ install(
         omp
     EXPORT
         OpenMP_Targets
-    RUNTIME DESTINATION
-        ${BINDIR}
-    LIBRARY DESTINATION
-        ${LIBDIR}
+    RUNTIME
+        DESTINATION
+            ${BINDIR}
+    LIBRARY
+        DESTINATION
+            ${LIBDIR}
 )
 
 # Export from build tree
@@ -99,8 +111,17 @@ add_library(
 )
 
 
-set(CPACK_GENERATOR "TGZ")
-set(CPACK_PACKAGE_VENDOR "")
-set(CPACK_ARCHIVE_FILE_NAME "openmp")
+set(
+    CPACK_GENERATOR
+        "TGZ"
+)
+set(
+    CPACK_PACKAGE_VENDOR
+        ""
+)
+set(
+    CPACK_ARCHIVE_FILE_NAME
+        "openmp"
+)
 
 include(CPack)
