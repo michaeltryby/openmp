@@ -1,7 +1,10 @@
 
 
-#include <omp.h>
+#include <iostream>
 #include <array>
+
+#include <omp.h>
+
 
 int main (int argc, char** argv) {
 
@@ -13,9 +16,11 @@ int main (int argc, char** argv) {
         arr.at(tid) = tid + 1;
     }
 
-    if(arr.at(0) == 1 && arr.at(1) == 2)
+    if(arr.at(0) == 1 && arr.at(1) == 2) {
+        std::cout << "Test passed!" << std::endl;
         return 0;
-
-    else
+    } else {
+        std::cout << "Test failed!" << std::endl;
         return 1;
+    }
 }

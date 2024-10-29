@@ -23,7 +23,6 @@ set(
 set(
     CMAKE_OSX_ARCHITECTURES
         x86_64
-        arm64
 )
 
 
@@ -31,6 +30,7 @@ include(
     extern/openmp.cmake
 )
 
+enable_testing()
 add_subdirectory(
-    test
+    tests
 )
