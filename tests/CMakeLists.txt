@@ -35,15 +35,15 @@ project(
         CXX
 )
 
-set(
-    CMAKE_OSX_DEPLOYMENT_TARGET
-        11.0
-)
+# set(
+#     CMAKE_OSX_DEPLOYMENT_TARGET
+#         11.0
+# )
 
-set(
-    CMAKE_OSX_ARCHITECTURES
-        x86_64
-)
+# set(
+#     CMAKE_OSX_ARCHITECTURES
+#         arm_64
+# )
 
 
 #set(CMAKE_FIND_DEBUG_MODE FALSE)

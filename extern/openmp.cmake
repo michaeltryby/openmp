@@ -29,20 +29,39 @@ include(FetchContent)
 
 cmake_policy(SET CMP0135 NEW)
 
+# v16.0.0
+# FetchContent_Declare(
+#   llvm_cmake
+#     URL
+#         https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/cmake-16.0.0.src.tar.xz
+#     URL_HASH
+#         SHA256=04e62ab7d0168688d9102680adf8eabe7b04275f333fe20eef8ab5a3a8ea9fcc
+# )
+
+# FetchContent_Declare(
+#   OpenMP
+#     URL
+#         https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/openmp-16.0.0.src.tar.xz
+#     URL_HASH
+#         SHA256=e30f69c6533157ec4399193ac6b158807610815accfbed98695d72074e4bedd0
+#     OVERRIDE_FIND_PACKAGE
+# )
+
+# v17.0.1 (v17.0.0 was yanked)
 FetchContent_Declare(
   llvm_cmake
     URL
-        https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/cmake-16.0.0.src.tar.xz
+        https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.1/cmake-17.0.1.src.tar.xz
     URL_HASH
-        SHA256=04e62ab7d0168688d9102680adf8eabe7b04275f333fe20eef8ab5a3a8ea9fcc
+        SHA256=46e745d9bdcd2e18719a47b080e65fd476e1f6c4bbaa5947e4dee057458b78bc
 )
 
 FetchContent_Declare(
   OpenMP
     URL
-        https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/openmp-16.0.0.src.tar.xz
+        https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.1/openmp-17.0.1.src.tar.xz
     URL_HASH
-        SHA256=e30f69c6533157ec4399193ac6b158807610815accfbed98695d72074e4bedd0
+        SHA256=d4a25c04d1bc035990a85f172bfe29a38f21ff87448f7fbae165fa780cb95717
     OVERRIDE_FIND_PACKAGE
 )
 
@@ -120,9 +139,11 @@ set(
     CPACK_PACKAGE_VENDOR
         ""
 )
-set(
-    CPACK_ARCHIVE_FILE_NAME
-        "openmp"
-)
+# Convert system name to lowercase for consistency
+string(TOLOWER "${CMAKE_SYSTEM_NAME}" SYSTEM_NAME_LOWER)
+
+# Set package filename with platform and architecture
+set(CPACK_ARCHIVE_FILE_NAME "openmp-v${PROJECT_VERSION}-${SYSTEM_NAME_LOWER}-${CMAKE_SYSTEM_PROCESSOR}")
+
 
 include(CPack)

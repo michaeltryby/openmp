@@ -11,7 +11,7 @@ endif()
 project(
   openmp
     VERSION
-        16.0.0
+        17.0.1
 )
 
 
@@ -22,7 +22,7 @@ set(
 
 set(
     CMAKE_OSX_ARCHITECTURES
-        x86_64
+        arm64
 )
 
 if (APPLE)
