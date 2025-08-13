@@ -18,7 +18,7 @@ Download and expand package. Add the following calls to your CMakeLists.txt
 ```
 set(
     CMAKE_PREFIX_PATH
-        ./openmp-16.0.0-Darwin/
+        ./openmp-17.0.1-Darwin/
 )
 
 find_package(
